@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="fr">
+<head>
+    <title>Création locataire</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link th:href="@{/bootstrap/css/bootstrap.min.css}" rel="stylesheet"/>
+    <link th:href="@{/fontawesome/css/all.min.css}" rel="stylesheet"/>
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet"/>
+    <link th:href="@{/css/site.css}" rel="stylesheet">
+</head>
+<body>
+<header th:replace="fragments :: header ">
+</header>
+
+<div class="container-fluid">
+    <div class="row">
+        <nav th:replace="fragments :: navbar">
+        </nav>
+        <main class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+            <div class="row">
+                <form method="post" th:action="@{/paiement/addEdit}" th:object="${paiement}">
+                    <div class="form-group">
+                        <label for="date-field" class="col-form-label">Date paiement</label>
+                        <input class="form-control" id="date-field" th:field="*{datePaiement}" type="date" name="datePaiement"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="montant-field">Montant</label>
+                        <input class="form-control" id="montant-field" th:field="*{montant}" type="number" name="montant"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="locataire-field"></label>
+                        <select id="locataire-field">
+                            <option th:each="locataire : ${locataires}" th:value="*{locataire.id}" th:utext="*{locataire.nom}">
+                            </option>
+                        </select>
+                    </div>
+                    <input type="hidden" id="id" th:field="*{id}">
+                    <label>
+                        <input type="submit" class="btn btn-success" value="Soumettre"/>
+                        <a href="/paiement/index" class="btn btn-danger pl-2">Annuler</a>
+                    </label>
+                </form>
+            </div>
+        </main>
+    </div>
+</div>
+
+<footer th:replace="fragments :: footer">
+
+</footer>
+<script th:src="@{/js/jquery-3.5.1.min.js}" rel="script"></script>
+<script th:src="@{/js/popper.min.js}" rel="script"></script>
+<script th:src="@{/bootstrap/js/bootstrap.bundle.min.js}" rel="script"></script>
+</body>
+</html>

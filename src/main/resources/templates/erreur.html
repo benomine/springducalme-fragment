@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="fr">
+<head>
+    <title>Résidence DuCalme</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href="bootstrap/css/bootstrap.min.css" th:href="@{/bootstrap/css/bootstrap.min.css}" rel="stylesheet"/>
+    <link href="fontawesome/css/all.min.css" th:href="@{/fontawesome/css/all.min.css}" rel="stylesheet"/>
+    <link href="css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" rel="stylesheet"/>
+    <link href="css/site.css" th:href="@{/css/site.css}" rel="stylesheet">
+</head>
+<body>
+<header th:replace="fragments :: header ">
+</header>
+
+<div class="container-fluid">
+    <div class="row">
+        <nav th:replace="fragments :: navbar">
+        </nav>
+        <main class="col-md-9 ml-sm-auto col-lg-10 px-md-4 align-items-center justify-content-center">
+            <div class="justify-content-center align-items-center align-self-center">
+                <i class="fa-5x fas fa-cog text-warning"></i>
+                <i class="fa-5x fas fa-cog text-danger"></i>
+                <i class="fa-5x fas fa-cog text-success"></i>
+            </div>
+        </main>
+    </div>
+</div>
+
+<footer th:replace="fragments :: footer">
+
+</footer>
+<script src="js/jquery-3.5.1.min.js" th:src="@{/js/jquery-3.5.1.min.js}" rel="script"></script>
+<script src="js/popper.min.js" th:src="@{/js/popper.min.js}" rel="script"></script>
+<script src="bootstrap/js/bootstrap.bundle.min.js" th:src="@{/bootstrap/js/bootstrap.bundle.min.js}" rel="script"></script>
+</body>
+</html>
